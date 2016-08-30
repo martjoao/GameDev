@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AB81802D-A08F-49DB-B3A9-13C178E43DC2}</ProjectGuid>
+    <RootNamespace>GameDev</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)\SDL2_ttf-2.0.12\include;$(SolutionDir)\SDL2_mixer-2.0.0\include;$(SolutionDir)\glew-1.10.0\include;$(SolutionDir)\glm;$(SolutionDir)\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\SDL2_ttf-2.0.12\lib\x86;$(SolutionDir)\SDL2_mixer-2.0.0\lib\x86;$(SolutionDir)\glew-1.10.0\lib\Release\Win32;$(SolutionDir)\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)\SDL2_ttf-2.0.12\include;$(SolutionDir)\SDL2_mixer-2.0.0\include;$(SolutionDir)\glew-1.10.0\include;$(SolutionDir)\glm;$(ProjectDir)\include;$(SolutionDir)\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\SDL2_ttf-2.0.12\lib\x86;$(SolutionDir)\SDL2_mixer-2.0.0\lib\x86;$(SolutionDir)\glew-1.10.0\lib\Release\Win32;$(SolutionDir)\SDL2-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_ttf.lib;glu32.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_ttf.lib;glu32.lib;opengl32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AABB.cpp" />
+    <ClCompile Include="src\aiEntity.cpp" />
+    <ClCompile Include="src\aiManager.cpp" />
+    <ClCompile Include="src\block.cpp" />
+    <ClCompile Include="src\colidableEntity.cpp" />
+    <ClCompile Include="src\enemy.cpp" />
+    <ClCompile Include="src\engine.cpp" />
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\gameEntity.cpp" />
+    <ClCompile Include="src\hudEntity.cpp" />
+    <ClCompile Include="src\hudManager.cpp" />
+    <ClCompile Include="src\inputManager.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\mesh.cpp" />
+    <ClCompile Include="src\physicsManager.cpp" />
+    <ClCompile Include="src\ray.cpp" />
+    <ClCompile Include="src\renderableEntity.cpp" />
+    <ClCompile Include="src\renderManager.cpp" />
+    <ClCompile Include="src\renderObject.cpp" />
+    <ClCompile Include="src\resourceManager.cpp" />
+    <ClCompile Include="src\shader.cpp" />
+    <ClCompile Include="src\gameCharacter.cpp" />
+    <ClCompile Include="src\windowManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\AABB.h" />
+    <ClInclude Include="include\aiEntity.h" />
+    <ClInclude Include="include\aiManager.h" />
+    <ClInclude Include="include\engine.h" />
+    <ClInclude Include="include\gameCharacter.h" />
+    <ClInclude Include="include\gameEntity.h" />
+    <ClInclude Include="include\block.h" />
+    <ClInclude Include="include\colidableEntity.h" />
+    <ClInclude Include="include\enemy.h" />
+    <ClInclude Include="include\game.h" />
+    <ClInclude Include="include\hudEntity.h" />
+    <ClInclude Include="include\hudManager.h" />
+    <ClInclude Include="include\inputManager.h" />
+    <ClInclude Include="include\mesh.h" />
+    <ClInclude Include="include\physicsManager.h" />
+    <ClInclude Include="include\ray.h" />
+    <ClInclude Include="include\renderableEntity.h" />
+    <ClInclude Include="include\renderObject.h" />
+    <ClInclude Include="include\resourceManager.h" />
+    <ClInclude Include="include\shader.h" />
+    <ClInclude Include="include\windowManager.h" />
+    <ClInclude Include="include\renderManager.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
